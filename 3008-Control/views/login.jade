@@ -1,0 +1,61 @@
+extends layout
+
+block header
+  link(rel='stylesheet', href='/css/style.css')
+  
+block content
+  h1#title Emoji Password Scheme
+  .container
+    div.middle
+      - if(typeof(error) !== 'undefined') {
+        .alert.alert-danger(role="alert" style="margin-bottom:0")
+          p
+            span.glyphicon.glyphicon-warning-sign(style="font-size:20px")
+            |  #{error}
+      - }
+    form(id="signup", method="POST", action="/login")
+      input#browserData(type="hidden" name='browserData')     
+      .form-group
+        .input-group.input-group-username
+          .input-group-addon
+            span.glyphicon.glyphicon-user
+          input.form-control#username(type='text', name='username', placeholder="Username", value=username readonly)
+      .form-group
+        .input-group.input-group-password
+          .input-group-addon
+            span.glyphicon.glyphicon-lock
+          input.form-control#password(type='password', name='password', placeholder="Password", data-container='body', data-toggle='popover', data-placement='bottom', data-content='')
+      .radio
+        label
+          - if(typeof(purpose) === 'undefined') {
+            input#purpose1(type='radio', name='purpose', value='Email', checked='')
+          - } else if(typeof(purpose) !== 'undefined' && purpose === 'Email') {
+            input#purpose1(type='radio', name='purpose', value='Email', checked='')
+          - } else {
+            input#purpose1(type='radio', name='purpose', value='Email')
+          - }
+          img(src='/icons/email.png', alt='Email') 
+          |  Email
+      .radio
+        label
+          - if(typeof(purpose) !== 'undefined' && purpose === 'Facebook') {
+            input#purpose2(type='radio', name='purpose', value='Facebook', checked='')
+          - } else {
+            input#purpose2(type='radio', name='purpose', value='Facebook')
+          - }
+          img(src='/icons/facebook.png', alt='Facebook') 
+          |  Facebook
+      .radio
+        label
+          - if(typeof(purpose) !== 'undefined' && purpose === 'Bank') {
+            input#purpose3(type='radio', name='purpose', value='Bank', checked='')
+          - } else {
+            input#purpose3(type='radio', name='purpose', value='Bank')
+          - }
+          img(src='/icons/bank.png', alt='Bank') 
+          |  Bank
+      button.btn.btn-default.btn-block(type="submit", value="Login In") Login
+      <HR>
+      div.btm-links
+        a.button.btn.btn-danger.btn-block(href="/dashboard") Back to the Dashboard
+        

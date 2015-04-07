@@ -1,0 +1,14 @@
+extends layout
+
+
+<!-- Modal -->
+block header
+	link(rel='stylesheet', href='/css/style.css')
+		
+block content
+	h1#title Error
+	.container
+		div.middle
+			p #{message}
+			div.btm-links
+				a.button.btn.btn-default.btn-block(href="/signup") Start a New Session

@@ -1,0 +1,42 @@
+html, body {
+	background-color: #eee;
+}
+
+hr {
+	border-color: #b2b2b2;
+}
+
+#title {
+	text-align: center;
+}
+
+#warning {
+	text-align: center;	
+}
+
+
+#logout {
+  position:absolute;
+  top:0;
+  right:0;
+ }
+
+#signup {
+	max-width: 330px;
+	padding: 30px;
+	margin: 0 auto;
+}
+
+#password {
+	background-color:white;
+}
+
+#passwordDiv {
+	margin: 0px 0px 10px;
+}
+
+.middle {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0px auto;
+}

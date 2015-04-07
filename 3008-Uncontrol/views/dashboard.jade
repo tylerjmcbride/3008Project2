@@ -1,0 +1,26 @@
+extends layout
+
+
+<!-- Modal -->
+block header
+	link(rel='stylesheet', href='/css/style.css')
+		
+block content
+	h1#title #{message} #{username}!
+	.container
+		div.middle
+			p Please review your assigned passwords.
+			#div.btm-links
+				a.button.btn.btn-warning.btn-block(href="/password?purpose=Email") 
+					img(src='/icons/email.png', alt='Email') 
+					|	Email
+				a.button.btn.btn-primary.btn-block(href="/password?purpose=Facebook")
+					img(src='/icons/facebook.png', alt='Facebook') 
+					|	Facebook
+				a.button.btn.btn-success.btn-block(href="/password?purpose=Bank")
+					img(src='/icons/bank.png', alt='Bank') 
+					|	Bank
+				<hr>
+				a.button.btn.btn-default.btn-block(href="/login") Continue
+				a.button.btn.btn-danger.btn-block(href="/logout") Quit Session
+	

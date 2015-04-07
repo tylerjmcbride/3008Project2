@@ -1,0 +1,12 @@
+extends layout
+
+block header
+  link(rel='stylesheet', href='/css/style.css')  
+
+block content
+  h1#title Congratulations #{username}, you have successfully logged in!
+  .container
+    div.middle
+      div.btm-links
+        a.button.btn.btn-default.btn-block(href="/login") Back to the Login Screen
+        a.button.btn.btn-default.btn-block(href="/dashboard") Back to the Dashboard

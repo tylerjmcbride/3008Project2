@@ -1,0 +1,19 @@
+extends layout
+
+
+<!-- Modal -->
+block header
+	link(rel='stylesheet', href='/css/style.css')
+	script(src='/js/emoji.js')
+		
+block content
+	h1#title=title
+	h3#warning WARNING: This will completely reset your password
+	.container
+		form(id="signup", method="POST", action="/reset")
+			input#browserData(type="hidden" name='browserData')
+			input.form-control#username(type='hidden', name='username', placeholder="Username", value=username)
+			button.btn.btn-success.btn-block(type="submit") Confirm
+			button.btn.btn-danger.btn-block(href="/") Go Back
+			
+
